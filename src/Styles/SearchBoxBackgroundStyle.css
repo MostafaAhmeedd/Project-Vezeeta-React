@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.imEmYa {
+    display: block;
+    background: -webkit-linear-gradient(top, rgb(255, 255, 255) 0px, rgba(255, 255, 255, 0.01) 38%, transparent 100%);
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#backgroundImage.active {
+    opacity: 1;
+}
+
+.home-text {
+    position: absolute;
+    top: 20%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    color: rgb(111, 112, 114);
+    text-align: left;
+    z-index: 1;
+}
+
+.home-text h1 {
+    font-size: 2em;
+}
+
+.home-text h2 {
+    font-size: 1.7em;
+}
+
+.home-text .home-phone {
+    display: inline-block;
+
+}
+
+.home-text .home-phone a {
+    color: rgb(111, 112, 114);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.home-text .home-phone i {
+    color: red;
+    margin-right: 5px;
+    font-size: 0.7em;
+}
+.home-phone{
+    margin-left: 10px;
+}

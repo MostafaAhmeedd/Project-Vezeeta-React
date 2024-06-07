@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ahmed",
+      "email": "Ahmed@gmail.com",
+      "phoneNum": "0120556632",
+      "gender": "male",
+      "password": "1234",
+      "bithday": ""
+    },
+    {
+      "id": "2",
+      "name": "Aly",
+      "email": "Aly@gmail.com",
+      "phoneNum": "0120556632",
+      "gender": "male",
+      "password": "1234",
+      "bithday": ""
+    },
+    {
+      "id": "3",
+      "name": "Sara",
+      "email": "Sara@gmail.com",
+      "phoneNum": "0120556632",
+      "gender": "female",
+      "password": "1234",
+      "bithday": ""
+    },
+    {
+      "id": "4",
+      "name": "Hana",
+      "email": "Hana@gmail.com",
+      "phoneNum": "0120556632",
+      "gender": "female",
+      "password": "1234",
+      "bithday": ""
+    },
+    {
+      "id": "5",
+      "name": "Samy",
+      "email": "Samy@gmail.com",
+      "phoneNum": "0120556632",
+      "gender": "male",
+      "password": "1234",
+      "bithday": ""
+    },
+    {
+      "id": "c4b7",
+      "username": "admin",
+      "phoneNum": "01207889562",
+      "email": "user1@gmail",
+      "password": "12345",
+      "gender": "Male",
+      "birthday": ""
+    }
+  ]
+}

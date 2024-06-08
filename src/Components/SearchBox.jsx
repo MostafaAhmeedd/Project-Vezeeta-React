@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/SearchBoxStyle.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import { holdDocName,holdCity,holdSpecialty} from '../Redux/Slices/SearchDetails';
-import { useDispatch,useSelector} from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useNavigate } from "react-router-dom";
 
 
@@ -17,10 +17,6 @@ const SearchBox = () => {
 
     const switchSearch = (x) => {
         setIsSearch(x);
-    }
-
-    const scroll = () => {
-        window.scrollTo(0, document.body.scrollHeight);
     }
 
     const handleSearch = () => {

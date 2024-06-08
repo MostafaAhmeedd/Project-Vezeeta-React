@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useDispatch, useSelector } from 'react-redux';
-import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'swiper/swiper-bundle.css';
 import '../Styles/DoctorsStyle.css';
-import { useState, useContext } from 'react';
-import { AllDoctorsData } from '../Redux/Slices/SearchFilteredDoctors';
+import { AllDoctorsData, EditDoctorsData } from '../Redux/Slices/SearchFilteredDoctors';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserMd, faMapMarkerAlt, faMoneyBillAlt, faClock, faPhone } from "@fortawesome/free-solid-svg-icons";
-
-
 
 const Doctors = () => {
     const dispatch = useDispatch();
@@ -16,12 +14,72 @@ const Doctors = () => {
     const city = useSelector((state) => state.SearchDetails.city);
     const doctorName = useSelector((state) => state.SearchDetails.doctorName);
     const Alldocs = useSelector((state) => state.FilteredDoctorsData.AllDoctor);
+    const users = {
+        "users": [
+            {
+                "id": "1",
+                "name": "Ahmed",
+                "email": "Ahmed@gmail.com",
+                "phoneNum": "0120556632",
+                "gender": "male",
+                "password": "1234",
+                "bithday": ""
+            },
+            {
+                "id": "2",
+                "name": "Ahmed",
+                "email": "Ahmed@gmail.com",
+                "phoneNum": "0120556632",
+                "gender": "male",
+                "password": "1234",
+                "bithday": "",
+                "appointment":[{
+                    "id":"1",
+                    "date": "Today",
+                    "from": "99",
+                    "to":"daa",
+                    "activated": true
+                },]
+            },
 
+
+        ]
+    }
+    const id = "2"
+    const book = (userId, doctorId, appointment, Alldocs) => {
+        const user = users.users.find(user => user.id === userId);
+        const updatedUser = {
+            ...user,
+            appointment:[{
+                id:appointment.id,
+                date: appointment.date,
+                from: appointment.from,
+                to: appointment.to,
+                activated: true
+            }]
+        }
+        console.log(updatedUser);
+
+        const doc = Alldocs.find(doc => doc.id === doctorId);
+        const updatedDoc = {
+            ...doc,
+            appointment: doc.appointment.map(appt => {
+                if (appt.id === appointment.id) {
+                    return {
+                        ...appt,
+                        activated: false
+                    }
+                }
+                return appt;
+            }).concat()
+        }
+    dispatch(EditDoctorsData(updatedDoc))
+
+    }
 
     useEffect(() => {
         dispatch(AllDoctorsData());
     }, [dispatch]);
-
 
     const filterDoctors = (docs, speciality, city, doctorName) => {
         return docs.filter((doctor) => {
@@ -31,9 +89,8 @@ const Doctors = () => {
             return isSpecialtyMatch && isCityMatch && isNameMatch;
         });
     };
-    const filteredDoctors = filterDoctors(Alldocs, speciality, city, doctorName);
-    console.log(filteredDoctors);
 
+    const filteredDoctors = filterDoctors(Alldocs, speciality, city, doctorName);
 
     return (
         <div className='con'>
@@ -50,45 +107,48 @@ const Doctors = () => {
                             </h4>
                             <p className="title">{doctor.title}</p>
                             <div className="rating">
-                                <span className="stars">{'★'.repeat(doctor.rating)}</span>
+                                <span className="stars">{'★'.repeat(Math.floor(doctor.rating))}</span>
                                 <span className="rating-count">Overall Rating From {doctor.ratingCount} Visitors</span>
                             </div>
                             <ul className="details">
                                 <li><FontAwesomeIcon icon={faUserMd} /> Orthopedist Specialized in <span>{doctor.specialization}</span></li>
                                 <li><FontAwesomeIcon icon={faMapMarkerAlt} /> {doctor.location}</li>
                                 <li><FontAwesomeIcon icon={faMoneyBillAlt} /> Fees: {doctor.fees} EGP</li>
-                                <li><FontAwesomeIcon icon={faClock} /> {doctor.waitingTime}</li>
+                                <li><FontAwesomeIcon icon={faClock} /> {doctor.waitingTime} min</li>
                                 <li><FontAwesomeIcon icon={faPhone} /> {doctor.phone} - Cost of regular call</li>
                             </ul>
                         </div>
                         <Swiper
-                            navigation={true}
-                            slidesPerView={1}
+                            slidesPerView={2}
                         >
-                            <div>
-                                <span className="SchedulesubComponentsstyle__AnimateSlideSideWay-sc-1dc31lc-9 hkOlnY">
-                                    <div className="SchedulesubComponentsstyle__DayColumn-sc-1dc31lc-12 TVapW">
-                                        <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 bMwAny">Today</div>
-                                        <div className="SchedulesubComponentsstyle__DayContent-sc-1dc31lc-10 gswTQR">
-                                            <div className="SchedulesubComponentsstyle__CenterText-sc-1dc31lc-16 ehgKRu">
-                                                <span className="SchedulesubComponentsstyle__Small-sc-1dc31lc-20 fpXaYC">From </span>
-                                                <span className="SchedulesubComponentsstyle__Bold-sc-1dc31lc-19 eaiLGN">9:00 PM</span> <br />
-                                                <span className="SchedulesubComponentsstyle__Small-sc-1dc31lc-20 fpXaYC">To </span>
-                                                <span className="SchedulesubComponentsstyle__Bold-sc-1dc31lc-19 eaiLGN">11:00 PM</span>
+                            {doctor.appointment.map((appointment, i) => (
+                                <SwiperSlide key={i}>
+                                    <div className="SchedulesubComponentsstyle__AnimateSlideSideWay-sc-1dc31lc-9 hkOlnY">
+                                        <div className="SchedulesubComponentsstyle__DayColumn-sc-1dc31lc-12 TVapW">
+                                            <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 bMwAny">{appointment.date}</div>
+                                            <div className="SchedulesubComponentsstyle__DayContent-sc-1dc31lc-10 gswTQR">
+                                                <div className="SchedulesubComponentsstyle__CenterText-sc-1dc31lc-16 ehgKRu">
+                                                    <span className="SchedulesubComponentsstyle__Small-sc-1dc31lc-20 fpXaYC">From </span>
+                                                    <span className="SchedulesubComponentsstyle__Bold-sc-1dc31lc-19 eaiLGN">{appointment.from}</span> <br />
+                                                    <span className="SchedulesubComponentsstyle__Small-sc-1dc31lc-20 fpXaYC">To </span>
+                                                    <span className="SchedulesubComponentsstyle__Bold-sc-1dc31lc-19 eaiLGN">{appointment.to}</span>
+                                                </div>
                                             </div>
+                                            {appointment.activated ? (
+                                                <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 dEeEEt" title={`Book your appointment ${appointment.date}`}onClick={() => book(id,doctor.id,appointment,Alldocs)} >Book</div>
+                                            ) : (
+                                                <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 dEeEEtD" title={`Appointment not available`} disabled>Reserved</div>
+                                            )}
                                         </div>
-                                        <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 dEeEEt" title="Book your appointment Today">Book</div>
                                     </div>
-                                </span>
-                            </div>
+                                </SwiperSlide>
+                            ))}
                         </Swiper>
                     </div>
                 </div>
             ))}
         </div>
     );
-}
+};
 export default Doctors;
-
-
-
+//

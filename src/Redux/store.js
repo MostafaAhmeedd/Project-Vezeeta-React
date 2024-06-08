@@ -1,13 +1,24 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import SearchDetailsReducer from './Slices/SearchDetails';
+import SearchFilteredDoctorsReducer from './Slices/SearchFilteredDoctors';
 
+const rootReducer = combineReducers({
+  SearchDetails: SearchDetailsReducer,
+  FilteredDoctorsData: SearchFilteredDoctorsReducer,
+});
 
-import SearchDetails from "./Slices/SearchDetails.js"
-import SearchFilteredDoctors from "./Slices/SearchFilteredDoctors.js"
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 
-const store =configureStore({
-    reducer:{
-        SearchDetails:SearchDetails,
-        FilteredDoctorsData:SearchFilteredDoctors,
-    }
-})
-export default store;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+});
+
+export const persistor = persistStore(store);

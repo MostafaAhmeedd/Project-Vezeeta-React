@@ -1,11 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useDispatch, useSelector } from 'react-redux';
 import axios from "axios";
 
 export const AllDoctorsData = createAsyncThunk("/filtered_doctors", async () => {
     const res = await axios.get("http://localhost:4000/doctors");
     return res.data;
 });
+export const EditDoctorsData = createAsyncThunk("/edit_doctors", async (doctor) => {
+    const res = await axios.put(`${"http://localhost:4000/doctors"}/${doctor.id}`,doctor);
+    return res.data;
+});
+
 
 const SearchFilteredDoctors = createSlice({
     name: "searchfiltereddoctors",
@@ -15,22 +19,16 @@ const SearchFilteredDoctors = createSlice({
     },
     
     reducers: {
-        // filterDoctors: (state, action) => {
-        //     const { speciality, city, doctorName } = action.payload;
-        //     state.FilteredDoctors = state.AllDoctor.filter(doctor => {
-        //         const matchesSpecialty = speciality ? doctor.speciality.toLowerCase().includes(speciality.toLowerCase()) : true;
-        //         // const matchesLocation = city ? doctor.city.toLowerCase().includes(city.toLowerCase()) : true;
-        //         // const matchesName = doctorName ? doctor.name.toLowerCase().includes(doctorName.toLowerCase()) : true;
-
-        //         return matchesSpecialty
-        //     });
-        // },
     },
     extraReducers: (builder) => {
         builder.addCase(AllDoctorsData.fulfilled, (state, action) => {
             state.AllDoctor = action.payload;
 
-        });
+        })
+        .addCase(EditDoctorsData.fulfilled, (state, action) => {
+            const i = state.AllDoctor.findIndex(doctor => doctor.id === action.payload.id);
+            state.AllDoctor[i] = action.payload;
+        })
     }
 });
 

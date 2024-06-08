@@ -1,11 +1,12 @@
 import React from 'react';
-import SignUp from '../Components/SignUp';
-const SignUpPage = () => {
+import ContactUs from '../Components/ContactUs';
+
+const ContactUsPage = () => {
   return (
     <div style={{ backgroundColor: 'lightgrey', paddingBottom: '20px', paddingTop: '10px' }}>
-      <SignUp />
+      <ContactUs />
     </div>
   );
 };
 
-export default SignUpPage;
+export default ContactUsPage;

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addUser } from '../Redux/Slice/userSlice';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/StyleSignUp.css';
+
 const SignUp = () => {
   const [user, setUser] = useState({
     username: '',
@@ -12,6 +13,9 @@ const SignUp = () => {
     gender: 'Male',
     birthday: '',
   });
+
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,14 +27,50 @@ const SignUp = () => {
     });
   };
 
+  const validateInput = () => {
+    let errors = {};
+    let isValid = true;
+
+    if (user.username.length < 5) {
+      errors.username = 'Username must be at least 5 characters long';
+      isValid = false;
+    }
+
+    if (!/^\d{11}$/.test(user.phoneNum)) {
+      errors.phoneNum = 'Phone number must be 11 digits';
+      isValid = false;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(user.email)) {
+      errors.email = 'Invalid email address';
+      isValid = false;
+    }
+
+    if (!/(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(user.password)) {
+      errors.password = 'Password must be at least 8 characters long and include at least one number, one special character, one lowercase, and one uppercase letter';
+      isValid = false;
+    }
+
+    setErrors(errors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addUser(user));
-    navigate('/');
+    if (validateInput()) {
+      setIsSubmitting(true);
+      dispatch(addUser(user))
+        .then(() => {
+          setIsSubmitting(false);
+          navigate('/');
+        })
+        .catch(() => {
+          setIsSubmitting(false);
+        });
+    }
   };
 
   return (
-    <div style={{ paddingBottom: '40px', paddingTop: '50px' }}>
     <div className="signup-container">
       <div className="signup-box">
         <div className="card bg-primary text-white">
@@ -40,87 +80,55 @@ const SignUp = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Username <span>*</span></label>
             <input
               type="text"
               name="username"
-              className="form-control"
+              className={`form-control ${errors.username && 'is-invalid'}`}
               value={user.username}
               onChange={handleChange}
               required
             />
-            {user.username.length < 5 ? (
-              <div style={{ textAlign: 'center', color: 'red' }}>
-                <p style={{ fontSize: '1cap' }}>Not Valid User Name</p>
-              </div>
-            ) : (
-              <div style={{ textAlign: 'center', color: 'greenyellow' }}>
-                <p style={{ fontSize: '1cap' }}>Valid User Name</p>
-              </div>
-            )}
+            {errors.username && <div className="invalid-feedback">{errors.username}</div>}
           </div>
           <div className="form-group">
-            <label htmlFor="phoneNum">Mobile Number</label>
+            <label htmlFor="phoneNum">Mobile Number <span>*</span></label>
             <input
               type="tel"
               id="phoneNum"
               name="phoneNum"
-              className="form-control"
+              className={`form-control ${errors.phoneNum && 'is-invalid'}`}
               value={user.phoneNum}
               onChange={handleChange}
               required
             />
-            {user.phoneNum.length === 11 ? (
-              <div style={{ textAlign: 'center', color: 'greenyellow', fontSize: '2cap' }}>
-                <p style={{ fontSize: '1cap' }}>Valid Phone Number</p>
-              </div>
-            ) : (
-              <div style={{ textAlign: 'center', color: 'red' }}>
-                <p style={{ fontSize: '1cap' }}>Not Valid Phone Number</p>
-              </div>
-            )}
+            {errors.phoneNum && <div className="invalid-feedback">{errors.phoneNum}</div>}
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email <span>*</span></label>
             <input
               type="email"
               id="email"
               name="email"
-              className="form-control"
+              className={`form-control ${errors.email && 'is-invalid'}`}
               value={user.email}
               onChange={handleChange}
               required
             />
-            {user.email.length < 10 ? (
-              <div style={{ textAlign: 'center', color: 'red' }}>
-                <p style={{ fontSize: '1cap' }}>Not Valid Mail</p>
-              </div>
-            ) : (
-              <div style={{ textAlign: 'center', color: 'greenyellow' }}>
-                <p style={{ fontSize: '1cap' }}>Valid Mail</p>
-              </div>
-            )}
+            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password <span>*</span></label>
             <input
               type="password"
               id="password"
               name="password"
-              className="form-control"
+              className={`form-control ${errors.password && 'is-invalid'}`}
               value={user.password}
               onChange={handleChange}
               required
             />
-            {user.password.length < 5 ? (
-              <div style={{ textAlign: 'center', color: 'red' }}>
-                <p style={{ fontSize: '1cap' }}>Not Valid password</p>
-              </div>
-            ) : (
-              <div style={{ textAlign: 'center', color: 'greenyellow' }}>
-                <p style={{ fontSize: '1cap' }}>Valid password</p>
-              </div>
-            )}
+            {errors.password && <div className="invalid-feedback">{errors.password}</div>}
           </div>
           <div className="form-group">
             <label htmlFor="gender">Gender</label>
@@ -131,8 +139,8 @@ const SignUp = () => {
               value={user.gender}
               onChange={handleChange}
             >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
           </div>
           <div className="form-group">
@@ -146,12 +154,17 @@ const SignUp = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">Register</button>
+          <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{marginLeft: '100px'}}>
+            {isSubmitting ? 'Registering...' : 'Register'}
+          </button>
+          <button className="btn btn-primary" onClick={() => navigate('/login')} style={{marginLeft: '50px'}}>
+            Go to Login
+          </button>
         </form>
       </div>
-    </div>
     </div>
   );
 };
 
 export default SignUp;
+

@@ -7,6 +7,7 @@ import SignUpPage from '../Pages/SignUpPage';
 import LoginPage from '../Pages/LoginPage';
 import ContactUsPage from '../Pages/ContactUsPage';
 import store from '../Redux/store';
+import ForDoctorPage from '../Pages/ForDoctorPage';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/"  element={<Home/>} />
           <Route path="/signUp" element={<SignUpPage/>} />
           <Route path="/login" element={<LoginPage/>} />
-          {/* <Route path="/ForDoc" element={ForDoc} /> */}
+          <Route path="/ForDoc" element={<ForDoctorPage/>} />
           <Route path="/ContactUs" element={<ContactUsPage/>} />
       
         </Routes>

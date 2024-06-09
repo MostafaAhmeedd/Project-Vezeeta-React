@@ -6,7 +6,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg" bg='rgb(0, 112, 205)' variant="dark">
+    <Navbar expand="lg" style={{ backgroundColor: 'rgb(0, 112, 205)' }} variant="dark">
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
@@ -17,19 +17,21 @@ const NavBar = () => {
         <Navbar.Collapse id="navbarNav">
           <Nav className="ml-auto">
             <LinkContainer to="/signUp" activeClassName="active">
-              <Nav.Link style={{ marginLeft: '19cm' }}>SignUp</Nav.Link>
+              <Nav.Link>SignUp</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/login" activeClassName="active">
               <Nav.Link>Login</Nav.Link>
             </LinkContainer>
-            {/* <LinkContainer to="/ForDoc" activeClassName="active">
+            <LinkContainer to="/ForDoc" activeClassName="active">
               <Nav.Link>VezeetaForDoctors</Nav.Link>
-            </LinkContainer> */}
+            </LinkContainer>
             <LinkContainer to="/ContactUs" activeClassName="active">
               <Nav.Link>ContactUs</Nav.Link>
             </LinkContainer>
             <Nav.Link href="#">عربي</Nav.Link>
-            <Nav.Link href="#">English</Nav.Link>
+            <LinkContainer to="/" activeClassName="active">
+              <Nav.Link>English</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

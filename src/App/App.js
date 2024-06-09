@@ -1,6 +1,6 @@
-import SearchPage from '../Pages/SearchPage';
+import HomePage from '../Pages/HomePage';
 import Doctors from '../Components/Doctors';
-import logo from '../logo.svg';
+
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PersistGate } from 'redux-persist/integration/react';
@@ -15,7 +15,7 @@ function App() {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <Routes>
-              <Route path="/" element={<SearchPage/>} />
+              <Route path="/" element={<HomePage/>} />
               <Route path="/filtered_doctors" element={<Doctors />} />
             </Routes>
           </PersistGate>

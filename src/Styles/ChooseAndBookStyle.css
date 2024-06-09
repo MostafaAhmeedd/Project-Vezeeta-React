@@ -1,0 +1,112 @@
+.beforeAndAfter {
+    background: #EEF0F2;
+    padding: 56px 0;
+    display: block;
+}
+
+/* .ccontainer {
+    width: 95%;
+    max-width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start ;
+    width: calc(100% - 30px) !important;
+    direction: ltr;
+} */
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 6px;
+        max-width: 1080px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        padding: 0 6px;
+        max-width: 1080px;
+    }
+}
+
+.specialties-part {
+    display: block;
+    width: 50%;
+    padding: 0px;
+    text-align: left; /* Ensures text is aligned left */
+}
+
+@media only screen and (max-width: 767px) {
+    .specialties-part {
+        margin-bottom: 32px;
+        width: 100%; /* Adjust to full width on smaller screens */
+    }
+}
+
+.specialties-header {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.specialty {
+    background: white;
+    color: rgb(111, 112, 114);
+    font-size: 14px !important;
+    margin-bottom: 8px;
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 5px 8px 5px 0;
+}
+
+.specialty:hover {
+    text-decoration: underline;
+}
+
+.cities-header {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.city {
+    background: white;
+    color: rgb(111, 112, 114);
+    font-size: 14px !important;
+    margin-bottom: 8px;
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 5px 8px 5px 0;
+}
+
+.city:hover {
+    text-decoration: underline;
+}
+
+.cities-part {
+    display: block;
+    width: 50%;
+    padding: 0px;
+    margin-top: 20px;
+    text-align: left; /* Ensures text is aligned left */
+}
+
+@media only screen and (max-width: 767px) {
+    .cities-part {
+        width: 100%; /* Adjust to full width on smaller screens */
+    }
+}

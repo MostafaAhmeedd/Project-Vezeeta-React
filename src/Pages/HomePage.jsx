@@ -1,17 +1,20 @@
 import React from 'react';
 import SearchPage from './SearchPage';
-import MarketingAndDownloadPage from './MarketingAndDownloadPage';
-import ChooseAndBookPage from './ChooseAndBookPage';
+/* import MarketingAndDownloadPage from './MarketingAndDownloadPage'; */
+import ChooseAndBookPage from './ChooseAndBookPage'; 
 import FooterPage from './FooterPage';
-
 
 const Home = () => {
     return (
-        <div>
-            <SearchPage></SearchPage>
+        <div style={{ overflow: 'auto', height: '760px'}}>
+            <div>
+                <SearchPage></SearchPage>
+            </div>
             {/* <MarketingAndDownloadPage></MarketingAndDownloadPage> */}
-            {/* <ChooseAndBookPage></ChooseAndBookPage>
-            <FooterPage></FooterPage> */}
+            <ChooseAndBookPage></ChooseAndBookPage>
+            <div style={{ height: '100px' }}>
+                <FooterPage></FooterPage>
+            </div>
         </div>
     );
 }

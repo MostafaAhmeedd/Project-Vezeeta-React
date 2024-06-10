@@ -1,0 +1,45 @@
+
+ 
+.user-appointments-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  direction: ltr;
+  text-align: left;
+  position: relative;
+  padding: 40px;
+  max-width: calc(-270px + 100vw);
+  width: calc(952px);
+}
+ 
+.appointments-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+.appointment-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+ 
+.appointment-card h2 {
+  margin-bottom: 10px;
+}
+ 
+.appointment-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+ 
+.appointment-card li {
+  margin-bottom: 5px;
+}

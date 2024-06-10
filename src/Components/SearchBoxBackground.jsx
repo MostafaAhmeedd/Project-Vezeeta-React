@@ -14,17 +14,15 @@ const SearchBoxBackground = () => {
         ];
 
         const backgroundImage = document.getElementById('backgroundImage');
+        backgroundImage.src = images[currentImageIndex];
         const switchBackground = () => {
-            backgroundImage.src = images[currentImageIndex];
-            backgroundImage.classList.remove('active');
-            void backgroundImage.offsetWidth;
-            backgroundImage.classList.add('active');
             setCurrentImageIndex((currentImageIndex + 1) % images.length);
+            backgroundImage.src = images[currentImageIndex];
         };
         const intervalId = setInterval(switchBackground, 2500);
 
         return () => clearInterval(intervalId);
-    }, [currentImageIndex]);
+    });
 
     return (
         <div className="backgrounds">

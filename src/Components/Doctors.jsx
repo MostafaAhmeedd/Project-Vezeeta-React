@@ -23,7 +23,14 @@ const Doctors = () => {
                 "phoneNum": "0120556632",
                 "gender": "male",
                 "password": "1234",
-                "bithday": ""
+                "bithday": "",
+                "appointment": [{
+                    "id": "1",
+                    "date": "Today",
+                    "from": "99",
+                    "to": "daa",
+                    "activated": true
+                },]
             },
             {
                 "id": "2",
@@ -33,11 +40,11 @@ const Doctors = () => {
                 "gender": "male",
                 "password": "1234",
                 "bithday": "",
-                "appointment":[{
-                    "id":"1",
+                "appointment": [{
+                    "id": "1",
                     "date": "Today",
                     "from": "99",
-                    "to":"daa",
+                    "to": "daa",
                     "activated": true
                 },]
             },
@@ -48,33 +55,56 @@ const Doctors = () => {
     const id = "2"
     const book = (userId, doctorId, appointment, Alldocs) => {
         const user = users.users.find(user => user.id === userId);
-        const updatedUser = {
-            ...user,
-            appointment:[{
-                id:appointment.id,
-                date: appointment.date,
-                from: appointment.from,
-                to: appointment.to,
-                activated: true
-            }]
+        if (user) {
+            let updatedUser;
+            if (user.appointment) {
+                updatedUser = {
+                    ...user,
+                    appointment: [
+                        ...user.appointment,
+                        {
+                            id: appointment.id,
+                            date: appointment.date,
+                            from: appointment.from,
+                            to: appointment.to,
+                            activated: !appointment.activated
+                        }
+                    ]
+                };
+            }
+            else{
+                updatedUser = {
+                    ...user,
+                    appointment: [{
+                        id: appointment.id,
+                        date: appointment.date,
+                        from: appointment.from,
+                        to: appointment.to,
+                        activated: true
+                    }]
+                };
+            }
+            const index = users.users.findIndex(u => u.id === userId);
+            users.users[index] = updatedUser;
         }
-        console.log(updatedUser);
-
+        
         const doc = Alldocs.find(doc => doc.id === doctorId);
-        const updatedDoc = {
-            ...doc,
-            appointment: doc.appointment.map(appt => {
-                if (appt.id === appointment.id) {
-                    return {
-                        ...appt,
-                        activated: false
+        if (doc) {
+            const updatedDoc = {
+                ...doc,
+                appointment: doc.appointment.map(appt => {
+                    if (appt.id === appointment.id) {
+                        return {
+                            ...appt,
+                            activated: false
+                        }
                     }
-                }
-                return appt;
-            }).concat()
-        }
-    dispatch(EditDoctorsData(updatedDoc))
+                    return appt;
+                }).concat()
+            }
+            dispatch(EditDoctorsData(updatedDoc))
 
+        }
     }
 
     useEffect(() => {
@@ -135,7 +165,7 @@ const Doctors = () => {
                                                 </div>
                                             </div>
                                             {appointment.activated ? (
-                                                <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 dEeEEt" title={`Book your appointment ${appointment.date}`}onClick={() => book(id,doctor.id,appointment,Alldocs)} >Book</div>
+                                                <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 dEeEEt" title={`Book your appointment ${appointment.date}`} onClick={() => book(id, doctor.id, appointment, Alldocs)} >Book</div>
                                             ) : (
                                                 <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 dEeEEtD" title={`Appointment not available`} disabled>Reserved</div>
                                             )}

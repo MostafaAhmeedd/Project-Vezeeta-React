@@ -42,7 +42,6 @@ const UserAppointments = () => {
 }
  
   const userList = users.users;
-  const id = 0;
  
   return (
     <div className="user-appointments-container">

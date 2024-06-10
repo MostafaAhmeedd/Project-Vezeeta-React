@@ -213,7 +213,7 @@
           "date": "Today",
           "from": "9:00 AM",
           "to": "5:00 PM",
-          "activated": true
+          "activated": false
         },
         {
           "id": "2",

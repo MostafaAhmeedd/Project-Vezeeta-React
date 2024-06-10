@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import '../Styles/SearchBoxStyle.css';
-import '../../node_modules/bootstrap/dist/css/bootstrap.css';
-import { holdDocName,holdCity,holdSpecialty} from '../Redux/Slices/SearchDetails';
-import { useDispatch} from 'react-redux';
+import { holdDocName, holdCity, holdSpecialty } from '../Redux/Slices/SearchDetails';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 
+import '../Styles/SearchBoxStyle.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 const SearchBox = () => {
-    const dispatch =useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isSearch, setIsSearch] = useState(true);
     const [specialty, setSpecialty] = useState('');
@@ -21,7 +21,7 @@ const SearchBox = () => {
 
     const handleSearch = () => {
         if (isSearch) {
-            
+
             dispatch(holdCity(city))
             dispatch(holdDocName(doctorName))
             dispatch(holdSpecialty(specialty))
@@ -95,12 +95,12 @@ const SearchBox = () => {
                     </div>
 
                     <div className="col-3 mb-3">
-                        <input 
-                            type="text" 
-                            className="form-control" 
-                            placeholder="Doctor name or hospital" 
-                            value={doctorName} 
-                            onChange={(e) => setDoctorName(e.target.value)} 
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Doctor name or hospital"
+                            value={doctorName}
+                            onChange={(e) => setDoctorName(e.target.value)}
                         />
                     </div>
                     <div className="col-3 text-end">

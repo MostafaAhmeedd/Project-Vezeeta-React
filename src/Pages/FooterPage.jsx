@@ -4,7 +4,7 @@ import Footer from '../Components/Footer';
 const FooterPage = () => {
     return (
         <div style={{ height: '500px' }}>
-              <Footer></Footer>
+            <Footer></Footer>
         </div>
     );
 }

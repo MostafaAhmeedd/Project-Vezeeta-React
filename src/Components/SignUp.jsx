@@ -19,7 +19,7 @@
 
 //   const dispatch = useDispatch();
 //   const navigate = useNavigate();
-//   const emails = useSelector((state) => state.user.users.email);
+//   const users = useSelector((state) => state.user.users);
 
 //   const handleChange = (e) => {
 //     const { name, value } = e.target;
@@ -34,7 +34,7 @@
 
 //   const handleSubmit = (e) => {
 //     e.preventDefault();
-//     const isEmailUnique = emails.every((emailExist) => emailExist.email!== user.email);
+// const isEmailUnique = !users.some((emailExist) => emailExist.email === user.email);
 //     console.log(isEmailUnique);
 
 //     if (validateInput() && isEmailUnique) {

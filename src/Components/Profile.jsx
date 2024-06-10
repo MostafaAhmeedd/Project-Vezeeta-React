@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateUser } from '../Redux/Slice/userSlice';
-import '../Styles/StyleProfile.css';
+import '../Styles/ProfileStyle.css';
 
 const Profile = () => {
   const user = useSelector((state) => state.user.user);

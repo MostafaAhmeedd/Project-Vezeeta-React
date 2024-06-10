@@ -5,7 +5,6 @@ import NavBarPage from '../Pages/NavBarPage';
 import Home from '../Components/Home';
 import SignUpPage from '../Pages/SignUpPage';
 import LoginPage from '../Pages/LoginPage';
-import ContactUsPage from '../Pages/ContactUsPage';
 import store from '../Redux/store';
 import ForDoctorPage from '../Pages/ForDoctorPage';
 import ProfilePage from '../Pages/ProfilePage';
@@ -20,7 +19,7 @@ function App() {
           <Route path="/signUp" element={<SignUpPage/>} />
           <Route path="/login" element={<LoginPage/>} />
           <Route path="/ForDoc" element={<ForDoctorPage/>} />
-          <Route path="/ContactUs" element={<ContactUsPage/>} />
+          {/* <Route path="/ContactUs" element={<ContactUsPage/>} /> */}
           <Route path="/Profile" element={<ProfilePage/>} />
       
         </Routes>

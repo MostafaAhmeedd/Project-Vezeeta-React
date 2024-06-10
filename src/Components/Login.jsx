@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../Redux/Slice/userSlice';
 import { useNavigate } from 'react-router-dom';
-import '../Styles/StyleLogin.css';
+import '../Styles/LoginStyle.css';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -39,11 +39,6 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <div className="card bg-primary text-white">
-          <div className="card-body text-center" style={{ backgroundColor: 'rgb(0, 112, 205)' }}>
-            <h2>Login</h2>
-          </div>
-        </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -74,10 +69,10 @@ const Login = () => {
               <p>{error}</p>
             </div>
           )}
-          <button style={{ marginLeft: "190px" }} type="submit" className="btn btn-primary">Login</button>
+          <button style={{ marginLeft: "190px", marginTop: "10px", marginBottom: "20px" }} type="submit" className="btn btn-primary">Login</button>
         </form>
         <div className="signup-link">
-          <p>Don't have an account? <span onClick={handleSignUp} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Sign Up</span></p>
+          <p>Don't have an account? <span onClick={handleSignUp} style={{ cursor: 'pointer', color: 'rgb(0, 112, 205)', textDecoration: 'underline' }}>Sign Up</span></p>
         </div>
       </div>
     </div>

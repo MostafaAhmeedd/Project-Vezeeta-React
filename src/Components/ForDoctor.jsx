@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Styles/ForDoctor.css'; 
-import docImage from '../assets/images/doctor.jpg'; 
+
 const ForDoctor = () => {
   return (
-    <div className="for-doctor-container">
-      <div className="alert-box">
-        <img src={docImage} alt="Abstract Doctor" className="doctor-img" />
+    <div className="Ffor-doctor-container">
+      <div className="Falert-box">
+        <img src='NavBarImages/doctor-logo.jfif' alt="Abstract Doctor" className="Fdoctor-img" />
       </div>
     </div>
   );

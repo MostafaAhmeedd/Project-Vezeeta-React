@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../Redux/Slice/userSlice'; 
-import logo from '../assets/images/vezeeta.png'; 
+
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 const NavBar = () => {
@@ -19,7 +19,7 @@ const NavBar = () => {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand >
-            <img  src={logo} alt="Vezeeta Logo" width="160" />
+            <img  src='NavBarImages/vezeeta.png' alt="Vezeeta Logo" width="160" />
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="navbarNav" />
@@ -41,8 +41,7 @@ const NavBar = () => {
                 </LinkContainer>
                 <LinkContainer  to="/" activeClassName="active">
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                </LinkContainer>
-               
+                </LinkContainer>  
               </>
             )}
             <LinkContainer to="/ForDoc" activeClassName="active">

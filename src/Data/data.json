@@ -1,0 +1,355 @@
+{
+  "doctors": [
+    {
+      "id": "1",
+      "speciality": "DD",
+      "type": "Telehealth",
+      "city": "Alexandria",
+      "name": "ZAAA Khaled",
+      "title": "Consultant Gastroenterologist",
+      "photo": "assets/images/doctors/doctor-4.jpg",
+      "rating": 4.8,
+      "ratingCount": 950,
+      "specialization": "Digestive System Disorders, Liver Diseases",
+      "location": "Gleem: El-Gaish Road, beside Bibliotheca Alexandrina",
+      "fees": 320,
+      "waitingTime": 35,
+      "phone": "16950",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "9:00 AM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "speciality": "Gastroenterology",
+      "type": "Telehealth",
+      "city": "Alexandria",
+      "name": "Hassan Khaled",
+      "title": "Consultant Gastroenterologist",
+      "photo": "assets/images/doctors/doctor-4.jpg",
+      "rating": 4.8,
+      "ratingCount": 950,
+      "specialization": "Digestive System Disorders, Liver Diseases",
+      "location": "Gleem: El-Gaish Road, beside Bibliotheca Alexandrina",
+      "fees": 320,
+      "waitingTime": 35,
+      "phone": "16950",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "2:00 PM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "speciality": "Neurology",
+      "type": "Doctor",
+      "city": "Cairo",
+      "name": "Nabil Zaki",
+      "title": "Consultant Neurologist",
+      "photo": "assets/images/doctors/doctor-5.jpg",
+      "rating": 4.7,
+      "ratingCount": 1120,
+      "specialization": "Stroke, Epilepsy, Multiple Sclerosis",
+      "location": "Nasr City: Makram Ebeid Street, building 5",
+      "fees": 450,
+      "waitingTime": 40,
+      "phone": "16234",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "1:00 PM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "speciality": "Oncology",
+      "type": "Telehealth",
+      "city": "Giza",
+      "name": "Mona Elsaid",
+      "title": "Consultant Oncologist",
+      "photo": "assets/images/doctors/doctor-6.jpg",
+      "rating": 5,
+      "ratingCount": 1400,
+      "specialization": "Breast Cancer, Chemotherapy",
+      "location": "Haram: Al Haram Street, next to Grand Egyptian Museum",
+      "fees": 500,
+      "waitingTime": 50,
+      "phone": "16432",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "4:00 PM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "speciality": "Pediatrics",
+      "type": "Doctor",
+      "city": "Cairo",
+      "name": "Ahmed Mostafa",
+      "title": "Senior Pediatrician",
+      "photo": "assets/images/doctors/doctor-7.jpg",
+      "rating": 4.6,
+      "ratingCount": 860,
+      "specialization": "Child Health, Vaccination",
+      "location": "Heliopolis: Al Ahram Street, building 22",
+      "fees": 270,
+      "waitingTime": 25,
+      "phone": "16123",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "1:00 PM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "speciality": "Psychiatry",
+      "type": "Telehealth",
+      "city": "Cairo",
+      "name": "Laila Hamdy",
+      "title": "Consultant Psychiatrist",
+      "photo": "assets/images/doctors/doctor-8.jpg",
+      "rating": 4.9,
+      "ratingCount": 1320,
+      "specialization": "Anxiety, Depression, Cognitive Behavioral Therapy",
+      "location": "Maadi: Road 9, building 10",
+      "fees": 380,
+      "waitingTime": 30,
+      "phone": "16654",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "9:00 AM",
+          "to": "5:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "speciality": "Urology",
+      "type": "Doctor",
+      "city": "Giza",
+      "name": "Osama Fahmy",
+      "title": "Consultant Urologist",
+      "photo": "assets/images/doctors/doctor-9.jpg",
+      "rating": 4.5,
+      "ratingCount": 990,
+      "specialization": "Kidney Stones, Prostate Surgery",
+      "location": "6th of October: Al Motamayez District, Medical Center",
+      "fees": 370,
+      "waitingTime": 45,
+      "phone": "16543",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "11:00 AM",
+          "to": "5:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "speciality": "Cardiology",
+      "type": "Telehealth",
+      "city": "Cairo",
+      "name": "Khaled Abdallah",
+      "title": "Consultant Cardiologist",
+      "photo": "assets/images/doctors/doctor-10.jpg",
+      "rating": 4.8,
+      "ratingCount": 1275,
+      "specialization": "Heart Disease, Hypertension",
+      "location": "Garden City: Kasr Al Aini Street, building 11",
+      "fees": 410,
+      "waitingTime": 50,
+      "phone": "16789",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "7:00 AM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "speciality": "Dermatology",
+      "type": "Doctor",
+      "city": "Alexandria",
+      "name": "Reem Nassar",
+      "title": "Senior Dermatologist",
+      "photo": "assets/images/doctors/doctor-11.jpg",
+      "rating": 4.7,
+      "ratingCount": 930,
+      "specialization": "Skin Diseases, Cosmetic Procedures",
+      "location": "Smouha: Victor Emmanuel Square, tower 3",
+      "fees": 350,
+      "waitingTime": 35,
+      "phone": "16456",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "10:00 AM",
+          "to": "5:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "speciality": "Endocrinology",
+      "type": "Telehealth",
+      "city": "Cairo",
+      "name": "Samir Kamel",
+      "title": "Consultant Endocrinologist",
+      "photo": "assets/images/doctors/doctor-12.jpg",
+      "rating": 4.9,
+      "ratingCount": 1100,
+      "specialization": "Diabetes, Thyroid Disorders",
+      "location": "Zamalek: Ismail Mohamed Street, building 19",
+      "fees": 390,
+      "waitingTime": 40,
+      "phone": "16567",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "9:00 AM",
+          "to": "5:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "10:00 AM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "de54",
+      "name": "joyce",
+      "title": "12",
+      "email": "hiji@nkjnk.com",
+      "photo": "jhjhjhj",
+      "rating": 12,
+      "ratingCount": 5,
+      "specialization": "54",
+      "city": "1425",
+      "location": "425",
+      "fees": 45,
+      "waitingTime": 45,
+      "phone": "10",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "11:00 AM",
+          "to": "1:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Today",
+          "from": "7:00 AM",
+          "to": "2:00 PM",
+          "activated": false
+        }
+      ]
+    }
+  ]
+}

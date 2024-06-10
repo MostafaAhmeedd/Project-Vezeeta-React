@@ -44,15 +44,6 @@
       "gender": "male",
       "password": "Abb12345@",
       "bithday": ""
-    },
-    {
-      "id": "ab28",
-      "name": "user1",
-      "phoneNum": "01207889562",
-      "email": "Samy@gmail.com",
-      "password": "Abb12345@",
-      "gender": "Male",
-      "birthday": ""
     }
   ]
 }

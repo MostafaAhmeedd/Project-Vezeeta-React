@@ -13,6 +13,11 @@ export const addUser = createAsyncThunk('users/signUp', async (newUser, { dispat
   return response.data;
 });
 
+// export const addUser = createAsyncThunk('users/signUp', async (newUser, { dispatch }) => {
+//   await axios.post('http://localhost:5000/users', newUser);
+//   dispatch(fetchUsers());
+// });
+
 export const updateUser = createAsyncThunk('user/updateUser', async (updatedUser) => {
   await axios.put(`http://localhost:5000/users/${updatedUser.id}`, updatedUser);
   return updatedUser;

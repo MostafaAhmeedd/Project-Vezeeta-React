@@ -39,15 +39,16 @@ const NavBar = () => {
                 <LinkContainer style={{marginLeft :"720px"}} to="/Profile" activeClassName="active">
                   <Nav.Link>Profile</Nav.Link>
                 </LinkContainer>
+                <LinkContainer  to="/" activeClassName="active">
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                </LinkContainer>
+               
               </>
             )}
             <LinkContainer to="/ForDoc" activeClassName="active">
               <Nav.Link>VezeetaForDoctors</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/ContactUs" activeClassName="active">
-              <Nav.Link>ContactUs</Nav.Link>
-            </LinkContainer>
+            <Nav.Link href="https://www.vezeeta.com/en/Generic/ContactUs">ContactUs</Nav.Link>
             <LinkContainer to="/" activeClassName="active">
               <Nav.Link>English</Nav.Link>
             </LinkContainer>

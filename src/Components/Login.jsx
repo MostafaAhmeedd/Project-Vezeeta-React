@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../Redux/Slice/userSlice';
 import { useNavigate } from 'react-router-dom';
@@ -14,6 +14,12 @@ const Login = () => {
   const navigate = useNavigate();
   const { error, user } = useSelector((state) => state.user);
 
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
   const handleChange = (e) => {
     setCredentials({
       ...credentials,
@@ -23,10 +29,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginUser(credentials));
-    if (!error && user) {
-      navigate('/');
-    }
+    await dispatch(loginUser(credentials));
   };
 
   const handleSignUp = () => {
@@ -71,7 +74,7 @@ const Login = () => {
               <p>{error}</p>
             </div>
           )}
-          <button style={{marginLeft :"190px"}} type="submit" className="btn btn-primary">Login</button>
+          <button style={{ marginLeft: "190px" }} type="submit" className="btn btn-primary">Login</button>
         </form>
         <div className="signup-link">
           <p>Don't have an account? <span onClick={handleSignUp} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Sign Up</span></p>

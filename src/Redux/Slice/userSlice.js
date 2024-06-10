@@ -6,17 +6,25 @@ export const fetchUsers = createAsyncThunk('user/fetchUsers', async () => {
   return response.data;
 });
 
+
 export const addUser = createAsyncThunk('users/signUp', async (newUser, { dispatch }) => {
-  await axios.post('http://localhost:5000/users', newUser);
-  dispatch(fetchUsers());
+  const response = await axios.post('http://localhost:5000/users', newUser);
+  dispatch(loginSuccess(response.data));
+  return response.data;
+});
+
+export const updateUser = createAsyncThunk('user/updateUser', async (updatedUser) => {
+  await axios.put(`http://localhost:5000/users/${updatedUser.id}`, updatedUser);
+  return updatedUser;
 });
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
     users: [],
-    user: null,  
-    error: null, 
+    user: null,
+    error: null,
+    status: null,
   },
   reducers: {
     loginSuccess: (state, action) => {
@@ -25,6 +33,12 @@ const userSlice = createSlice({
     },
     loginFailure: (state, action) => {
       state.error = action.payload;
+    },
+    logoutUser: (state) => {
+      state.user = null;
+    },
+    loginUser2: (state, action) => {
+      state.user = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -38,9 +52,18 @@ const userSlice = createSlice({
       })
       .addCase(fetchUsers.rejected, (state) => {
         state.status = 'failed';
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        const index = state.users.findIndex(user => user.id === action.payload.id);
+        if (index !== -1) {
+          state.users[index] = action.payload;
+        }
       });
   },
 });
+
+export const { loginUser2, logoutUser } = userSlice.actions;
 
 export const { loginSuccess, loginFailure } = userSlice.actions;
 

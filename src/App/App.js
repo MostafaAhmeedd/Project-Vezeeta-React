@@ -8,6 +8,7 @@ import LoginPage from '../Pages/LoginPage';
 import ContactUsPage from '../Pages/ContactUsPage';
 import store from '../Redux/store';
 import ForDoctorPage from '../Pages/ForDoctorPage';
+import ProfilePage from '../Pages/ProfilePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<LoginPage/>} />
           <Route path="/ForDoc" element={<ForDoctorPage/>} />
           <Route path="/ContactUs" element={<ContactUsPage/>} />
+          <Route path="/Profile" element={<ProfilePage/>} />
       
         </Routes>
     </BrowserRouter>

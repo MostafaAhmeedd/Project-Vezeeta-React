@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser, fetchUsers } from '../Redux/Slice/userSlice';
+import { loginUser } from '../Redux/Slice/userSlice';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/StyleLogin.css';
 
@@ -13,9 +13,6 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { error, user } = useSelector((state) => state.user);
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
 
   const handleChange = (e) => {
     setCredentials({
@@ -26,12 +23,14 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(loginUser(credentials));
+    dispatch(loginUser(credentials));
     if (!error && user) {
       navigate('/');
-    }else{
-      navigate('/login');
     }
+  };
+
+  const handleSignUp = () => {
+    navigate('/signup');
   };
 
   return (
@@ -72,8 +71,11 @@ const Login = () => {
               <p>{error}</p>
             </div>
           )}
-          <button type="submit" className="btn btn-primary">Login</button>
+          <button style={{marginLeft :"190px"}} type="submit" className="btn btn-primary">Login</button>
         </form>
+        <div className="signup-link">
+          <p>Don't have an account? <span onClick={handleSignUp} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Sign Up</span></p>
+        </div>
       </div>
     </div>
   );

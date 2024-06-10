@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/ForDoctor.css'; 
-import docImage from '../assets/images/doctor.jpg'; // Adjust the path as needed
-
+import docImage from '../assets/images/doctor.jpg'; 
 const ForDoctor = () => {
   return (
     <div className="for-doctor-container">

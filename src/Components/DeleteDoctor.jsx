@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteDoctorAsync } from '../Redux/DeleteDoctorSlice';
+import { deleteDoctorAsync } from '../Redux/Slices/DeleteDoctorSlice';
 
 const DeleteDoctor = ({ doctors }) => {
   const dispatch = useDispatch();

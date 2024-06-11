@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AddDoctor from './AddDoctor';
 import DeleteDoctor from './DeleteDoctor';
-import { setDoctors } from '../Redux/DeleteDoctorSlice';
+import { setDoctors } from '../Redux/Slices/DeleteDoctorSlice';
 
 import { CategoryScale } from 'chart.js';
 import Chart from 'chart.js/auto';

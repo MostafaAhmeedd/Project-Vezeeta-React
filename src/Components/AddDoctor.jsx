@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addDoctorAsync } from '../Redux/AddDoctorSlice';
-import { fetchDoctors } from '../Redux/DeleteDoctorSlice';
+import { addDoctorAsync } from '../Redux/Slices/AddDoctorSlice';
+import { fetchDoctors } from '../Redux/Slices/DeleteDoctorSlice';
 
 const AddDoctor = () => {
   const dispatch = useDispatch();
@@ -200,7 +200,7 @@ const AddDoctor = () => {
             </div>
           </div>
           <div className="row mb-3">
-            <div className="col-sm-12 text-center"> 
+            <div className="col-sm-12 text-center">
               <button type="submit" className="btn btn-primary">Add Doctor</button>
             </div>
           </div>

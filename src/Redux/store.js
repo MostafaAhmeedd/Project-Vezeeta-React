@@ -5,8 +5,8 @@ import storage from 'redux-persist/lib/storage';
 import SearchDetailsReducer from './Slices/SearchDetails';
 import SearchFilteredDoctorsReducer from './Slices/SearchFilteredDoctors';
 import userReducer from './Slices/User';
-import addDoctorReducer from './AddDoctorSlice';
-import deleteDoctorReducer from './DeleteDoctorSlice';
+import addDoctorReducer from './Slices/AddDoctorSlice';
+import deleteDoctorReducer from './Slices/DeleteDoctorSlice';
 
 
 const rootReducer = combineReducers({

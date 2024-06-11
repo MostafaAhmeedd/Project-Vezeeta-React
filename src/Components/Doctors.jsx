@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -8,14 +8,19 @@ import { AllDoctorsData, EditDoctorsData } from '../Redux/Slices/SearchFilteredD
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserMd, faMapMarkerAlt, faMoneyBillAlt, faClock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { updateUser } from '../Redux/Slices/User';
+import { useNavigate } from 'react-router-dom';
 
 const Doctors = () => {
+    const navigate = useNavigate();
+
     const dispatch = useDispatch();
     const speciality = useSelector((state) => state.SearchDetails.speciality);
     const city = useSelector((state) => state.SearchDetails.city);
     const doctorName = useSelector((state) => state.SearchDetails.doctorName);
     const Alldocs = useSelector((state) => state.FilteredDoctorsData.AllDoctor);
     const user = useSelector((state) => state.user.user);
+    
+    const [showLoginMessage, setShowLoginMessage] = useState(false);
 
     const book = (user, doctorId, appointment, Alldocs) => {
         const doc = Alldocs.find(doc => doc.id === doctorId);
@@ -52,22 +57,24 @@ const Doctors = () => {
                 };
             }
             dispatch(updateUser(updatedUser));
-        }
 
-        if (doc) {
-            const updatedDoc = {
-                ...doc,
-                appointment: doc.appointment.map(appt => {
-                    if (appt.id === appointment.id) {
-                        return {
-                            ...appt,
-                            activated: !appointment.activated
-                        };
-                    }
-                    return appt;
-                })
-            };
-            dispatch(EditDoctorsData(updatedDoc));
+            if (doc) {
+                const updatedDoc = {
+                    ...doc,
+                    appointment: doc.appointment.map(appt => {
+                        if (appt.id === appointment.id) {
+                            return {
+                                ...appt,
+                                activated: !appointment.activated
+                            };
+                        }
+                        return appt;
+                    })
+                };
+                dispatch(EditDoctorsData(updatedDoc));
+            }
+        } else {
+            setShowLoginMessage(true);
         }
     }
 
@@ -88,6 +95,11 @@ const Doctors = () => {
 
     return (
         <div className='con'>
+            {showLoginMessage && (
+                <div className="login-message">
+                    {navigate("/signUp")}
+                </div>
+            )}
             {filteredDoctors.length > 0 ? (
                 filteredDoctors.map((doctor, index) => (
                     <div className="doctor-container" key={index}>

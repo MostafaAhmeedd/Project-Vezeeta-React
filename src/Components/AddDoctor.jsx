@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addDoctorAsync } from '../Redux/AddDoctorSlice';
 import { fetchDoctors } from '../Redux/DeleteDoctorSlice';
 
@@ -21,7 +22,7 @@ const AddDoctor = () => {
   const [appointment, setAppointments] = useState([]);
 
   useEffect(() => {
-    setAppointments(Array.from({ length: numberOfAppointments }, (_, i) => ({ id: `${i + 1}`, date: 'Today', from: '', to: '', activated: false })));
+    setAppointments(Array.from({ length: numberOfAppointments }, () => ({ id: uuidv4(), date: 'Today', from: '', to: '', activated: false })));
   }, [numberOfAppointments]);
 
   const handleAppointmentChange = (index, key, value) => {
@@ -61,7 +62,7 @@ const AddDoctor = () => {
       setFees('');
       setWaitingTime('');
       setPhone('');
-      setAppointments(Array.from({ length: numberOfAppointments }, (_, i) => ({ id: `${i + 1}`, date: 'Today', from: '', to: '', activated: false })));
+      setAppointments(Array.from({ length: numberOfAppointments }, () => ({ id: uuidv4(), date: 'Today', from: '', to: '', activated: false })));
     } catch (error) {
       console.error('Error occurred while adding doctor:', error);
     }
@@ -153,7 +154,7 @@ const AddDoctor = () => {
                 value={numberOfAppointments}
                 onChange={(e) => {
                   setNumberOfAppointments(e.target.value);
-                  setAppointments(Array.from({ length: e.target.value }, (_, i) => ({ id: i + 1, date: 'Today', from: '9:00 AM', to: '1:00 PM', activated: false })));
+                  setAppointments(Array.from({ length: e.target.value }, () => ({ id: uuidv4(), date: 'Today', from: '9:00 AM', to: '1:00 PM', activated: false })));
                 }}
                 required
               />
@@ -198,8 +199,6 @@ const AddDoctor = () => {
               ))}
             </div>
           </div>
-
-
           <div className="row mb-3">
             <div className="col-sm-12 text-center"> 
               <button type="submit" className="btn btn-primary">Add Doctor</button>

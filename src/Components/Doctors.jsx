@@ -137,7 +137,7 @@ const Doctors = () => {
  
                             >
                                 {doctor.appointment.map((appointment, i) => (
-                                    <SwiperSlide className='swiper-slide' key={i}>
+                                    <SwiperSlide className='Dswiper-slide' key={i}>
                                         <div className="SchedulesubComponentsstyle__AnimateSlideSideWay-sc-1dc31lc-9 hkOlnY">
                                             <div className="SchedulesubComponentsstyle__DayColumn-sc-1dc31lc-12 TVapW">
                                                 <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 bMwAny">{appointment.date}</div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from '../Redux/Slice/userSlice'; 
+import { logoutUser } from '../Redux/Slices/userSlice'; 
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 

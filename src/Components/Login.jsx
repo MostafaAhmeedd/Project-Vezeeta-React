@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../Redux/Slice/userSlice';
+import { loginUser } from '../Redux/Slices/userSlice';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/LoginStyle.css';
 

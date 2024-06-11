@@ -8,7 +8,6 @@ import HomePage from '../Pages/HomePage';
 import Doctors from '../Components/Doctors';
 import SignUpPage from '../Pages/SignUpPage';
 import LoginPage from '../Pages/LoginPage';
-import store from '../Redux/store';
 import ForDoctorPage from '../Pages/ForDoctorPage';
 import ProfilePage from '../Pages/ProfilePage';
 
@@ -17,9 +16,10 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <NavBarPage />
-      <div className="App">
-        <Provider store={store}>
+      <Provider store={store}>
+        <NavBarPage />
+        <div className="App">
+
           <PersistGate loading={null} persistor={persistor}>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -32,9 +32,10 @@ function App() {
               <Route path="/filtered_doctors" element={<Doctors />} />
             </Routes>
           </PersistGate>
-        </Provider>
-      </div>
-    </BrowserRouter>
+        </div>
+      </Provider>
+
+    </BrowserRouter >
   );
 }
 

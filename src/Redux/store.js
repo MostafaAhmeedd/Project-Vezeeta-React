@@ -4,10 +4,12 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import SearchDetailsReducer from './Slices/SearchDetails';
 import SearchFilteredDoctorsReducer from './Slices/SearchFilteredDoctors';
+import userReducer from './Slices/userSlice';
 
 const rootReducer = combineReducers({
   SearchDetails: SearchDetailsReducer,
   FilteredDoctorsData: SearchFilteredDoctorsReducer,
+  user: userReducer,
 });
 
 const persistConfig = {

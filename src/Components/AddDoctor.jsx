@@ -46,7 +46,7 @@ const AddDoctor = () => {
         fees: parseFloat(fees),
         waitingTime: parseInt(waitingTime, 10),
         phone,
-        appointment
+        appointment: appointment.map(appt => ({ ...appt, activated: false }))
       }));
       await dispatch(fetchDoctors());
       setName('');
@@ -144,7 +144,7 @@ const AddDoctor = () => {
             </div>
           </div>
           <div className="row mb-3 align-items-center">
-            <label htmlFor="numberOfAppointments" className="col-sm-5 col-form-label">Number of Appointments</label>
+            <label htmlFor="numberOfAppointments" className="col-sm-5 col-form-label">Number of Free Slots</label>
             <div className="col-sm-3">
               <input
                 type="number"
@@ -160,11 +160,11 @@ const AddDoctor = () => {
             </div>
           </div>
           <div className="row mb-3 align-items-center">
-            <label className="col-sm-3 col-form-label">Appointments</label>
+            <label className="col-sm-3 col-form-label">Free Slots</label>
             <div className="col-sm-9">
               {appointment.map((appointment, index) => (
                 <div key={appointment.id} className="row mb-2">
-                  <div className="col-sm-3">
+                  <div className="col-sm-4">
                     <input
                       type="text"
                       className="form-control"
@@ -174,7 +174,7 @@ const AddDoctor = () => {
                       required
                     />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-sm-4">
                     <input
                       type="text"
                       className="form-control"
@@ -184,7 +184,7 @@ const AddDoctor = () => {
                       required
                     />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-sm-4">
                     <input
                       type="text"
                       className="form-control"
@@ -194,14 +194,6 @@ const AddDoctor = () => {
                       required
                     />
                   </div>
-                  <div className="col-sm-5 d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      className="form-check-input me-2"
-                      checked={appointment.activated}
-                      onChange={(e) => handleAppointmentChange(index, 'activated', e.target.checked)}
-                    /> <label className="form-check-label">Activate</label>
-                  </div>
                 </div>
               ))}
             </div>
@@ -209,7 +201,7 @@ const AddDoctor = () => {
 
 
           <div className="row mb-3">
-            <div className="col-sm-12 text-center"> {/* Center the button */}
+            <div className="col-sm-12 text-center"> 
               <button type="submit" className="btn btn-primary">Add Doctor</button>
             </div>
           </div>

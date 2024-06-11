@@ -2,14 +2,14 @@
   "doctors": [
     {
       "id": "1",
-      "speciality": "DD",
+      "speciality": "Dermatology",
       "type": "Telehealth",
       "city": "Alexandria",
-      "name": "ZAAA Khaled",
+      "name": "Zaki Khaled",
       "title": "Consultant Gastroenterologist",
-      "photo": "assets/images/doctors/doctor-4.jpg",
+      "photo": "/DoctorsImages/man1.jpg",
       "rating": 4.8,
-      "ratingCount": 950,
+      "ratingCount": 950,  
       "specialization": "Digestive System Disorders, Liver Diseases",
       "location": "Gleem: El-Gaish Road, beside Bibliotheca Alexandrina",
       "fees": 320,
@@ -29,17 +29,24 @@
           "from": "10:00 AM",
           "to": "6:00 PM",
           "activated": false
+        },
+        {
+          "id": "3",
+          "date": "Friday",
+          "from": "2:00 PM",
+          "to": "7:00 PM",
+          "activated": false
         }
       ]
     },
     {
       "id": "2",
-      "speciality": "Gastroenterology",
+      "speciality": "Dermatology",
       "type": "Telehealth",
       "city": "Alexandria",
       "name": "Hassan Khaled",
       "title": "Consultant Gastroenterologist",
-      "photo": "assets/images/doctors/doctor-4.jpg",
+      "photo": "/DoctorsImages/man2.jpg",
       "rating": 4.8,
       "ratingCount": 950,
       "specialization": "Digestive System Disorders, Liver Diseases",
@@ -51,27 +58,27 @@
         {
           "id": "1",
           "date": "Today",
-          "from": "2:00 PM",
+          "from": "10:00 AM",
           "to": "5:00 PM",
           "activated": false
         },
         {
           "id": "2",
           "date": "Tomorrow",
-          "from": "10:00 AM",
-          "to": "6:00 PM",
+          "from": "1:00 PM",
+          "to": "8:00 PM",
           "activated": false
         }
       ]
     },
     {
       "id": "3",
-      "speciality": "Neurology",
+      "speciality": "Dermatology",
       "type": "Doctor",
       "city": "Cairo",
       "name": "Nabil Zaki",
       "title": "Consultant Neurologist",
-      "photo": "assets/images/doctors/doctor-5.jpg",
+      "photo": "/DoctorsImages/man3.jpg",
       "rating": 4.7,
       "ratingCount": 1120,
       "specialization": "Stroke, Epilepsy, Multiple Sclerosis",
@@ -83,7 +90,7 @@
         {
           "id": "1",
           "date": "Today",
-          "from": "1:00 PM",
+          "from": "11:00 AM",
           "to": "5:00 PM",
           "activated": false
         },
@@ -98,12 +105,12 @@
     },
     {
       "id": "4",
-      "speciality": "Oncology",
+      "speciality": "Cardiology",
       "type": "Telehealth",
       "city": "Giza",
       "name": "Mona Elsaid",
       "title": "Consultant Oncologist",
-      "photo": "assets/images/doctors/doctor-6.jpg",
+      "photo": "/DoctorsImages/woman1.jpg",
       "rating": 5,
       "ratingCount": 1400,
       "specialization": "Breast Cancer, Chemotherapy",
@@ -115,7 +122,7 @@
         {
           "id": "1",
           "date": "Today",
-          "from": "4:00 PM",
+          "from": "12:00 PM",
           "to": "5:00 PM",
           "activated": false
         },
@@ -125,17 +132,24 @@
           "from": "10:00 AM",
           "to": "6:00 PM",
           "activated": false
+        },
+        {
+          "id": "3",
+          "date": "Thursday",
+          "from": "8:00 AM",
+          "to": "3:00 PM",
+          "activated": false
         }
       ]
     },
     {
       "id": "5",
-      "speciality": "Pediatrics",
+      "speciality": "Cardiology",
       "type": "Doctor",
       "city": "Cairo",
       "name": "Ahmed Mostafa",
       "title": "Senior Pediatrician",
-      "photo": "assets/images/doctors/doctor-7.jpg",
+      "photo": "/DoctorsImages/man4.jpg",
       "rating": 4.6,
       "ratingCount": 860,
       "specialization": "Child Health, Vaccination",
@@ -157,17 +171,24 @@
           "from": "10:00 AM",
           "to": "6:00 PM",
           "activated": false
+        },
+        {
+          "id": "3",
+          "date": "Friday",
+          "from": "11:00 AM",
+          "to": "4:00 PM",
+          "activated": false
         }
       ]
     },
     {
       "id": "6",
-      "speciality": "Psychiatry",
+      "speciality": "Gastroenterology",
       "type": "Telehealth",
       "city": "Cairo",
       "name": "Laila Hamdy",
       "title": "Consultant Psychiatrist",
-      "photo": "assets/images/doctors/doctor-8.jpg",
+      "photo": "/DoctorsImages/woman2.jpg",
       "rating": 4.9,
       "ratingCount": 1320,
       "specialization": "Anxiety, Depression, Cognitive Behavioral Therapy",
@@ -189,17 +210,24 @@
           "from": "10:00 AM",
           "to": "6:00 PM",
           "activated": false
+        },
+        {
+          "id": "3",
+          "date": "Thursday",
+          "from": "11:00 AM",
+          "to": "4:00 PM",
+          "activated": false
         }
       ]
     },
     {
       "id": "7",
-      "speciality": "Urology",
+      "speciality": "Gastroenterology",
       "type": "Doctor",
       "city": "Giza",
       "name": "Osama Fahmy",
       "title": "Consultant Urologist",
-      "photo": "assets/images/doctors/doctor-9.jpg",
+      "photo": "/DoctorsImages/man5.jpg",
       "rating": 4.5,
       "ratingCount": 990,
       "specialization": "Kidney Stones, Prostate Surgery",
@@ -211,7 +239,7 @@
         {
           "id": "1",
           "date": "Today",
-          "from": "11:00 AM",
+          "from": "1:00 PM",
           "to": "5:00 PM",
           "activated": true
         },
@@ -226,12 +254,12 @@
     },
     {
       "id": "8",
-      "speciality": "Cardiology",
+      "speciality": "Gastroenterology",
       "type": "Telehealth",
       "city": "Cairo",
       "name": "Khaled Abdallah",
       "title": "Consultant Cardiologist",
-      "photo": "assets/images/doctors/doctor-10.jpg",
+      "photo": "/DoctorsImages/man6.jpg",
       "rating": 4.8,
       "ratingCount": 1275,
       "specialization": "Heart Disease, Hypertension",
@@ -243,7 +271,7 @@
         {
           "id": "1",
           "date": "Today",
-          "from": "7:00 AM",
+          "from": "2:00 PM",
           "to": "5:00 PM",
           "activated": false
         },
@@ -258,12 +286,12 @@
     },
     {
       "id": "9",
-      "speciality": "Dermatology",
+      "speciality": "Endocrinology",
       "type": "Doctor",
       "city": "Alexandria",
       "name": "Reem Nassar",
       "title": "Senior Dermatologist",
-      "photo": "assets/images/doctors/doctor-11.jpg",
+      "photo": "/DoctorsImages/woman3.jpg",
       "rating": 4.7,
       "ratingCount": 930,
       "specialization": "Skin Diseases, Cosmetic Procedures",
@@ -275,7 +303,7 @@
         {
           "id": "1",
           "date": "Today",
-          "from": "10:00 AM",
+          "from": "11:00 AM",
           "to": "5:00 PM",
           "activated": true
         },
@@ -295,7 +323,7 @@
       "city": "Cairo",
       "name": "Samir Kamel",
       "title": "Consultant Endocrinologist",
-      "photo": "assets/images/doctors/doctor-12.jpg",
+      "photo": "/DoctorsImages/man7.jpg",
       "rating": 4.9,
       "ratingCount": 1100,
       "specialization": "Diabetes, Thyroid Disorders",
@@ -321,32 +349,182 @@
       ]
     },
     {
-      "id": "de54",
-      "name": "joyce",
-      "title": "12",
-      "email": "hiji@nkjnk.com",
-      "photo": "jhjhjhj",
-      "rating": 12,
-      "ratingCount": 5,
-      "specialization": "54",
-      "city": "1425",
-      "location": "425",
-      "fees": 45,
-      "waitingTime": 45,
-      "phone": "10",
+      "id": "11",
+      "speciality": "Endocrinology",
+      "type": "Doctor",
+      "city": "Cairo",
+      "name": "Hany Abdelrahman",
+      "title": "Consultant Orthopedic Surgeon",
+      "photo": "/DoctorsImages/man8.jpg",
+      "rating": 4.7,
+      "ratingCount": 1150,
+      "specialization": "Joint Replacement, Sports Injuries",
+      "location": "Dokki: Tahrir Street, building 7",
+      "fees": 450,
+      "waitingTime": 35,
+      "phone": "16756",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "12:00 PM",
+          "to": "6:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "9:00 AM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "3",
+          "date": "Friday",
+          "from": "11:00 AM",
+          "to": "3:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "speciality": "Neurology",
+      "type": "Telehealth",
+      "city": "Alexandria",
+      "name": "Lina Elsharawy",
+      "title": "Consultant Ophthalmologist",
+      "photo": "/DoctorsImages/woman4.jpg",
+      "rating": 4.8,
+      "ratingCount": 1050,
+      "specialization": "Cataract Surgery, Glaucoma",
+      "location": "Montazah: Al Mamoura Road, building 4",
+      "fees": 400,
+      "waitingTime": 30,
+      "phone": "16854",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "10:00 AM",
+          "to": "5:00 PM",
+          "activated": false
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "9:00 AM",
+          "to": "3:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "speciality": "Neurology",
+      "type": "Doctor",
+      "city": "Cairo",
+      "name": "Omar Farouk",
+      "title": "Consultant ENT Specialist",
+      "photo": "/DoctorsImages/man9.jpg",
+      "rating": 4.7,
+      "ratingCount": 980,
+      "specialization": "Hearing Disorders, Sinus Surgery",
+      "location": "Zamalek: Abou El Feda Street, building 20",
+      "fees": 360,
+      "waitingTime": 40,
+      "phone": "16987",
       "appointment": [
         {
           "id": "1",
           "date": "Today",
           "from": "11:00 AM",
-          "to": "1:00 PM",
+          "to": "4:00 PM",
           "activated": false
         },
         {
           "id": "2",
+          "date": "Tomorrow",
+          "from": "9:00 AM",
+          "to": "5:00 PM",
+          "activated": true
+        },
+        {
+          "id": "3",
+          "date": "Friday",
+          "from": "12:00 PM",
+          "to": "6:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "speciality": "Oncology",
+      "type": "Telehealth",
+      "city": "Giza",
+      "name": "Fady Kamal",
+      "title": "Consultant Rheumatologist",
+      "photo": "/DoctorsImages/man10.jpg",
+      "rating": 4.9,
+      "ratingCount": 1200,
+      "specialization": "Arthritis, Osteoporosis",
+      "location": "Mohandessin: Arab League Street, building 6",
+      "fees": 420,
+      "waitingTime": 30,
+      "phone": "16743",
+      "appointment": [
+        {
+          "id": "1",
           "date": "Today",
-          "from": "7:00 AM",
-          "to": "2:00 PM",
+          "from": "9:00 AM",
+          "to": "4:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "11:00 AM",
+          "to": "5:00 PM",
+          "activated": false
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "speciality": "Oncology",
+      "type": "Doctor",
+      "city": "Alexandria",
+      "name": "Sara Elsaid",
+      "title": "Consultant Nephrologist",
+      "photo": "/DoctorsImages/woman5.jpg",
+      "rating": 4.8,
+      "ratingCount": 1000,
+      "specialization": "Kidney Disease, Dialysis",
+      "location": "Borg El Arab: Airport Road, building 9",
+      "fees": 440,
+      "waitingTime": 45,
+      "phone": "16876",
+      "appointment": [
+        {
+          "id": "1",
+          "date": "Today",
+          "from": "10:00 AM",
+          "to": "4:00 PM",
+          "activated": true
+        },
+        {
+          "id": "2",
+          "date": "Tomorrow",
+          "from": "12:00 PM",
+          "to": "6:00 PM",
+          "activated": false
+        },
+        {
+          "id": "3",
+          "date": "Friday",
+          "from": "9:00 AM",
+          "to": "3:00 PM",
           "activated": false
         }
       ]

@@ -19,6 +19,7 @@ const DeleteDoctor = ({ doctors }) => {
       <ul className="list-group">
         {doctors.map(doctor => (
           <li key={doctor.id} className="list-group-item d-flex justify-content-between align-items-center">
+            <img src={doctor.photo} alt={doctor.name} className="rounded-circle" style={{ width: "50px", height: "50px", marginRight: "10px" }} />
             {doctor.name}
             <button className="btn btn-danger" onClick={() => handleDelete(doctor.id)}>Delete</button>
           </li>

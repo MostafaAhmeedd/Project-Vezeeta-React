@@ -24,6 +24,7 @@ function App() {
           <PersistGate loading={null} persistor={persistor}>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="/signUp" element={<SignUpPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/ForDoc" element={<ForDoctorPage />} />
@@ -31,7 +32,7 @@ function App() {
               <Route path="/Profile" element={<ProfilePage />} />
               <Route path="/appointments" element={<UserAppointments />} />
               <Route path="/filtered_doctors" element={<Doctors />} />
-              <Route path="admin" element={<Admin></Admin>}></Route>
+
             </Routes>
           </PersistGate>
         </div>

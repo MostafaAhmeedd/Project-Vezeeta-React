@@ -5,11 +5,16 @@ import storage from 'redux-persist/lib/storage';
 import SearchDetailsReducer from './Slices/SearchDetails';
 import SearchFilteredDoctorsReducer from './Slices/SearchFilteredDoctors';
 import userReducer from './Slices/User';
+import addDoctorReducer from './AddDoctorSlice';
+import deleteDoctorReducer from './DeleteDoctorSlice';
+
 
 const rootReducer = combineReducers({
   SearchDetails: SearchDetailsReducer,
   FilteredDoctorsData: SearchFilteredDoctorsReducer,
   user: userReducer,
+  addDoctor: addDoctorReducer,
+  deleteDoctor: deleteDoctorReducer,
 });
 
 const persistConfig = {

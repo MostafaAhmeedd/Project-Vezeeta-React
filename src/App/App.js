@@ -11,11 +11,11 @@ import SignUpPage from '../Pages/SignUpPage';
 import LoginPage from '../Pages/LoginPage';
 import ForDoctorPage from '../Pages/ForDoctorPage';
 import ProfilePage from '../Pages/ProfilePage';
-
-import './App.css';
+import Admin from "../Components/Admin";
 
 function App() {
   return (
+
     <BrowserRouter>
       <Provider store={store}>
         <NavBarPage />
@@ -31,12 +31,14 @@ function App() {
               <Route path="/Profile" element={<ProfilePage />} />
               <Route path="/appointments" element={<UserAppointments />} />
               <Route path="/filtered_doctors" element={<Doctors />} />
+              <Route path="admin" element={<Admin></Admin>}></Route>
             </Routes>
           </PersistGate>
         </div>
       </Provider>
 
     </BrowserRouter >
+
   );
 }
 

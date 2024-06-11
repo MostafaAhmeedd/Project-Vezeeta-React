@@ -1,0 +1,25 @@
+.container {
+  max-width: 1200px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+.appointments-timeline {
+  margin-top: 20px;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+.alert {
+  font-size: 1rem;
+}

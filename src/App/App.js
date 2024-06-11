@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '../Redux/store';
+
 import UserAppointments from '../Components/UserAppointments';
 import NavBarPage from '../Pages/NavBarPage';
 import HomePage from '../Pages/HomePage';

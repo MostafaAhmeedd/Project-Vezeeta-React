@@ -7,7 +7,7 @@
       "phoneNum": "0120556632",
       "gender": "male",
       "password": "Abb12345@",
-      "bithday": "",
+      "birthday": "",
       "appointment": []
     },
     {
@@ -17,7 +17,7 @@
       "phoneNum": "0120556632",
       "gender": "male",
       "password": "Abb12345@",
-      "bithday": ""
+      "birthday": ""
     },
     {
       "id": "3",
@@ -26,7 +26,7 @@
       "phoneNum": "0120556632",
       "gender": "female",
       "password": "Abb12345@",
-      "bithday": "",
+      "birthday": "",
       "appointment": []
     },
     {
@@ -36,7 +36,7 @@
       "phoneNum": "0120556632",
       "gender": "female",
       "password": "Abb12345@",
-      "bithday": ""
+      "birthday": ""
     },
     {
       "id": "5",
@@ -45,7 +45,8 @@
       "phoneNum": "0120556632",
       "gender": "male",
       "password": "Abb12345@",
-      "bithday": ""
+      "birthday": "",
+      "appointment": []
     }
   ]
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addUser } from '../Redux/Slices/userSlice';
-import { loginUser } from '../Redux/Slices/userSlice';
+import { addUser } from '../Redux/Slices/User';
+import { loginUser } from '../Redux/Slices/User';
 import '../Styles/SignUpStyle.css';
 
 const SignUp = () => {

@@ -24,9 +24,10 @@ const SearchDetails = createSlice({
 
 
 
+
     }
 })
 
 
-export const { holdSpecialty, holdCity,holdDocName} = SearchDetails.actions;
+export const { holdSpecialty, holdCity,holdDocName,holdType} = SearchDetails.actions;
 export default SearchDetails.reducer;

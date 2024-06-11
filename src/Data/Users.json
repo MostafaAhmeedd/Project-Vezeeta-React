@@ -7,7 +7,8 @@
       "phoneNum": "0120556632",
       "gender": "male",
       "password": "Abb12345@",
-      "bithday": ""
+      "bithday": "",
+      "appointment": []
     },
     {
       "id": "2",
@@ -25,7 +26,8 @@
       "phoneNum": "0120556632",
       "gender": "female",
       "password": "Abb12345@",
-      "bithday": ""
+      "bithday": "",
+      "appointment": []
     },
     {
       "id": "4",

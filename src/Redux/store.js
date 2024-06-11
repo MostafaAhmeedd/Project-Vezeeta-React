@@ -4,7 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import SearchDetailsReducer from './Slices/SearchDetails';
 import SearchFilteredDoctorsReducer from './Slices/SearchFilteredDoctors';
-import userReducer from './Slices/userSlice';
+import userReducer from './Slices/User';
 
 const rootReducer = combineReducers({
   SearchDetails: SearchDetailsReducer,

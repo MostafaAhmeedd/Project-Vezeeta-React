@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from '../Redux/Slices/userSlice'; 
+import { logoutUser } from '../Redux/Slices/User'; 
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
@@ -25,9 +25,16 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbarNav" />
         <Navbar.Collapse id="navbarNav">
           <Nav className="ml-auto">
+          <LinkContainer style={{marginLeft :"720px"}} to="/ForDoc" activeClassName="active">
+              <Nav.Link>VezeetaForDoctors</Nav.Link>
+            </LinkContainer>
+            <Nav.Link href="https://www.vezeeta.com/en/Generic/ContactUs">ContactUs</Nav.Link>
+            <LinkContainer to="/" activeClassName="active">
+              <Nav.Link>English</Nav.Link>
+            </LinkContainer>
             {!user ? (
               <>
-                <LinkContainer style={{marginLeft :"720px"}} to="/signUp" activeClassName="active">
+                <LinkContainer  to="/signUp" activeClassName="active">
                   <Nav.Link>SignUp</Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/login" activeClassName="active">
@@ -36,21 +43,19 @@ const NavBar = () => {
               </>
             ) : (
               <>
-                <LinkContainer style={{marginLeft :"720px"}} to="/Profile" activeClassName="active">
+                <LinkContainer  to="/Profile" activeClassName="active">
                   <Nav.Link>Profile</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/appointments" activeClassName="active">
+                  <Nav.Link>Appointments</Nav.Link>
+                </LinkContainer>  
                 <LinkContainer  to="/" activeClassName="active">
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                </LinkContainer>  
+                </LinkContainer>
+
+                
               </>
             )}
-            <LinkContainer to="/ForDoc" activeClassName="active">
-              <Nav.Link>VezeetaForDoctors</Nav.Link>
-            </LinkContainer>
-            <Nav.Link href="https://www.vezeeta.com/en/Generic/ContactUs">ContactUs</Nav.Link>
-            <LinkContainer to="/" activeClassName="active">
-              <Nav.Link>English</Nav.Link>
-            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -9,19 +9,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserMd, faMapMarkerAlt, faMoneyBillAlt, faClock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { updateUser } from '../Redux/Slices/User';
 import { useNavigate } from 'react-router-dom';
-
+import { Navigation, Pagination } from 'swiper/modules';
+ 
+ 
 const Doctors = () => {
     const navigate = useNavigate();
-
+ 
     const dispatch = useDispatch();
     const speciality = useSelector((state) => state.SearchDetails.speciality);
     const city = useSelector((state) => state.SearchDetails.city);
     const doctorName = useSelector((state) => state.SearchDetails.doctorName);
     const Alldocs = useSelector((state) => state.FilteredDoctorsData.AllDoctor);
     const user = useSelector((state) => state.user.user);
-    
+ 
     const [showLoginMessage, setShowLoginMessage] = useState(false);
-
+ 
     const book = (user, doctorId, appointment, Alldocs) => {
         const doc = Alldocs.find(doc => doc.id === doctorId);
         if (user) {
@@ -57,7 +59,7 @@ const Doctors = () => {
                 };
             }
             dispatch(updateUser(updatedUser));
-
+ 
             if (doc) {
                 const updatedDoc = {
                     ...doc,
@@ -77,11 +79,11 @@ const Doctors = () => {
             setShowLoginMessage(true);
         }
     }
-
+ 
     useEffect(() => {
         dispatch(AllDoctorsData());
     }, [dispatch]);
-
+ 
     const filterDoctors = (docs, speciality, city, doctorName) => {
         return docs.filter((doctor) => {
             const isSpecialtyMatch = speciality ? doctor.speciality === speciality : true;
@@ -90,9 +92,9 @@ const Doctors = () => {
             return isSpecialtyMatch && isCityMatch && isNameMatch;
         });
     };
-
+ 
     const filteredDoctors = filterDoctors(Alldocs, speciality, city, doctorName);
-
+ 
     return (
         <div className='con'>
             {showLoginMessage && (
@@ -125,9 +127,17 @@ const Doctors = () => {
                                     <li><FontAwesomeIcon icon={faPhone} /> {doctor.phone} - Cost of regular call</li>
                                 </ul>
                             </div>
-                            <Swiper slidesPerView={2}>
+                            <Swiper className="mySwiper"
+                                navigation={true}
+                                pagination={{
+                                    clickable: true,
+                                  }}
+                                modules={[Pagination,Navigation]}
+                                slidesPerView={1}
+ 
+                            >
                                 {doctor.appointment.map((appointment, i) => (
-                                    <SwiperSlide key={i}>
+                                    <SwiperSlide className='swiper-slide' key={i}>
                                         <div className="SchedulesubComponentsstyle__AnimateSlideSideWay-sc-1dc31lc-9 hkOlnY">
                                             <div className="SchedulesubComponentsstyle__DayColumn-sc-1dc31lc-12 TVapW">
                                                 <div className="SchedulesubComponentsstyle__ColumnButton-sc-1dc31lc-11 bMwAny">{appointment.date}</div>
@@ -161,5 +171,5 @@ const Doctors = () => {
         </div>
     );
 };
-
+ 
 export default Doctors;

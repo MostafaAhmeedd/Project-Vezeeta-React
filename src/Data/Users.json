@@ -73,7 +73,8 @@
       "email": "maismail@ejada.com",
       "password": "Mostafa123$",
       "gender": "male",
-      "birthday": ""
+      "birthday": "",
+      "appointment": []
     },
     {
       "id": "f7f1",

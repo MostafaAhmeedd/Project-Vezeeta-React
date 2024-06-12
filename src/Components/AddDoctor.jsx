@@ -12,7 +12,7 @@ const AddDoctor = () => {
   const [photo, setPhoto] = useState('');
   const [rating, setRating] = useState('');
   const [ratingCount, setRatingCount] = useState('');
-  const [specialization, setSpecialization] = useState('');
+  const [speciality, setSpeciality] = useState('');
   const [city, setCity] = useState('');
   const [location, setLocation] = useState('');
   const [fees, setFees] = useState('');
@@ -41,7 +41,7 @@ const AddDoctor = () => {
         photo,
         rating: parseFloat(rating),
         ratingCount: parseInt(ratingCount, 10),
-        specialization,
+        speciality,
         city,
         location,
         fees: parseFloat(fees),
@@ -56,7 +56,7 @@ const AddDoctor = () => {
       setPhoto('');
       setRating('');
       setRatingCount('');
-      setSpecialization('');
+      setSpeciality('');
       setCity('');
       setLocation('');
       setFees('');
@@ -109,9 +109,9 @@ const AddDoctor = () => {
             </div>
           </div>
           <div className="row mb-3 align-items-center">
-            <label htmlFor="specialization" className="col-sm-3 col-form-label">Specialization</label>
+            <label htmlFor="specialization" className="col-sm-3 col-form-label">speciality</label>
             <div className="col-sm-9">
-              <input type="text" className="form-control" id="specialization" value={specialization} onChange={(e) => setSpecialization(e.target.value)} required />
+              <input type="text" className="form-control" id="specialization" value={speciality} onChange={(e) => setSpeciality(e.target.value)} required />
             </div>
           </div>
           <div className="row mb-3 align-items-center">

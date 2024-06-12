@@ -115,6 +115,7 @@ const Doctors = () => {
                                     <span className="doctor-name">{doctor.name}</span>
                                 </h4>
                                 <p className="title">{doctor.title}</p>
+                                <p className="title">{doctor.speciality} Doctor</p>
                                 <div className="rating">
                                     <span className="stars">{'★'.repeat(Math.floor(doctor.rating))}</span>
                                     <span className="rating-count">Overall Rating From {doctor.ratingCount} Visitors</span>

@@ -74,6 +74,15 @@
       "password": "Mostafa123$",
       "gender": "male",
       "birthday": ""
+    },
+    {
+      "id": "f7f1",
+      "name": "Mostafa",
+      "phoneNum": "01155955919",
+      "email": "maismail@ejada.comm",
+      "password": "Mostafa1234$",
+      "gender": "Male",
+      "birthday": ""
     }
   ]
 }

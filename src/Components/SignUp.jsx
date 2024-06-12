@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addUser } from '../Redux/Slices/User';
-import { loginUser } from '../Redux/Slices/User';
+import { loginUser ,fetchUsers} from '../Redux/Slices/User';
 import '../Styles/SignUpStyle.css';
 
 const SignUp = () => {
@@ -20,6 +20,10 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const users = useSelector((state) => state.user.users);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

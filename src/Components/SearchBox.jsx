@@ -76,7 +76,7 @@ const SearchBox = () => {
                     <div className="col-3 mb-3">
                         <input
                             type="text"
-                            className="form-control"
+                            className="formm-control"
                             placeholder="Doctor name or hospital"
                             value={doctorName}
                             onChange={(e) => setDoctorName(e.target.value)}

@@ -15,7 +15,7 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar expand="lg" style={{ marginRight :"250px" ,backgroundColor: 'rgb(0, 112, 205)' }} variant="dark">
+    <Navbar expand="lg" style={{ marginRight :"250px" ,backgroundColor: 'rgb(0, 112, 205)' }} data-bs-theme="dark">
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand >
@@ -25,12 +25,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="navbarNav" />
         <Navbar.Collapse id="navbarNav">
           <Nav className="ml-auto">
-          <LinkContainer style={{marginLeft :"720px"}} to="/ForDoc" activeClassName="active">
-              <Nav.Link>VezeetaForDoctors</Nav.Link>
+          <LinkContainer style={{marginLeft :"720px"}} to="/" activeClassName="active">
+              <Nav.Link>Home</Nav.Link>
             </LinkContainer>
             <Nav.Link href="https://www.vezeeta.com/en/Generic/ContactUs">ContactUs</Nav.Link>
-            <LinkContainer to="/" activeClassName="active">
-              <Nav.Link>English</Nav.Link>
+          <LinkContainer  to="/ForDoc" activeClassName="active">
+              <Nav.Link>VezeetaForDoctors</Nav.Link>
             </LinkContainer>
             {!user ? (
               <>
@@ -49,7 +49,7 @@ const NavBar = () => {
                 <LinkContainer to="/appointments" activeClassName="active">
                   <Nav.Link>Appointments</Nav.Link>
                 </LinkContainer>  
-                <LinkContainer  to="/" activeClassName="active">
+                <LinkContainer  to="/login" activeClassName="active">
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                 </LinkContainer>
 

@@ -8,7 +8,7 @@ import SpecialitySlider from './SpecialitySliderPage'
 
 const Home = () => {
     return (
-        <div style={{ overflow: 'auto', height: '1000px', width: '100%' }}>
+        <div style={{ overflow: 'auto', height: '990px', width: '100%' }}>
             <div>
                 <SearchPage></SearchPage>
             </div>

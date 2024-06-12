@@ -1,5 +1,5 @@
 .con {
-  height: 760px;
+  height: 690px;
   overflow-y: auto;
   display: flex;
   flex-direction: column
@@ -228,6 +228,7 @@
  
 .swiper-button-next {
   padding-left:20px;
+
 }
  
 .swiper-button-prev {
